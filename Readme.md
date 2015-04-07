@@ -16,3 +16,9 @@ This Library is sugar for on top of [validForms](https://github.com/morungos/wor
 Fore more Node.js NLP check out;
 
 * [Natural Node](https://github.com/NaturalNode/natural/) 
+
+## License
+
+[The MIT License (MIT)](LICENSE.md)
+
+Copyright © 2015 Rob Ellis
