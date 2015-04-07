@@ -1,0 +1,22 @@
+{
+  "name": "lemmer",
+  "version": "0.1.0",
+  "description": "Wordnet Lemmer",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test -R spec"
+  },
+  "author": "Rob Ellis",
+  "license": "MIT",
+  "dependencies": {
+    "WNdb": "3.1.1",
+    "async": "0.9.0",
+    "node-wordnet": "0.1.6",
+    "underscore": "1.8.3",
+    "wndb-with-exceptions": "3.0.1"
+  },
+  "devDependencies": {
+    "mocha": "2.2.3",
+    "should": "5.2.0"
+  }
+}
