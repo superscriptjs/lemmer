@@ -3,7 +3,7 @@ var should  = require("should");
 
 var Lem = require('../');
 
-describe.only('Lemma Interface', function(){
+describe('Lemma Interface', function(){
   
   it("should lemma a single word", function(done) {
     Lem.lemmatize('fought', function(err, res) {
@@ -20,4 +20,5 @@ describe.only('Lemma Interface', function(){
       done();
     });
   });
+
 });
