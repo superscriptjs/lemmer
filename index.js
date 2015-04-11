@@ -2,7 +2,7 @@ var async = require("async");
 var _ = require("underscore");
 
 var WordNet = require("node-wordnet");
-var wordnet = new WordNet();
+var wordnet = new WordNet({cache:true});
 
 var _findForms = function(input, next) {
   var i, wordforms = [], word, _ref, reducer;
@@ -14,7 +14,6 @@ var _findForms = function(input, next) {
   };
 
   wordnet.validForms(input, function(results) {
-
     if (results && results.length !== 0) {
       for (i = 0; i < results.length; i++ ) {
         _ref = results[i].split('#');

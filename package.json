@@ -1,6 +1,6 @@
 {
   "name": "lemmer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Wordnet Lemmer",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "dependencies": {
     "WNdb": "3.1.1",
     "async": "0.9.0",
-    "node-wordnet": "0.1.7",
+    "node-wordnet": "0.1.8",
     "underscore": "1.8.3",
     "wndb-with-exceptions": "3.0.1"
   },
