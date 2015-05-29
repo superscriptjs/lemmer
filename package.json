@@ -1,6 +1,6 @@
 {
   "name": "lemmer",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Wordnet Lemmer",
   "main": "index.js",
   "scripts": {
