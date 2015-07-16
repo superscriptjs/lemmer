@@ -7,18 +7,20 @@
     "test": "mocha test -R spec"
   },
   "author": "Rob Ellis",
-    "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://raw.github.com/silentrob/lemmer/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "dependencies": {
     "WNdb": "3.1.1",
     "async": "0.9.0",
     "node-wordnet": "0.1.9",
     "underscore": "1.8.3",
     "wndb-with-exceptions": "3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silentrob/lemmer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/silentrob/lemmer/issues"
   },
   "devDependencies": {
     "mocha": "2.2.3",
