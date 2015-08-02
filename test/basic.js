@@ -23,7 +23,7 @@ describe('Lemma Interface', function(){
 
   it("undef", function(done) {
     Lem.lemmatize('__something__', function(err, res) {
-      console.log(err, res);
+      res.should.eql(['__something__']);
       done();
     });
   });
