@@ -13,19 +13,23 @@ var _findForms = function(input, next) {
     });
   };
 
-  wordnet.validForms(input, function(results) {
-    if (results && results.length !== 0) {
-      for (i = 0; i < results.length; i++ ) {
-        _ref = results[i].split('#');
-        word = _ref[0];
-        wordforms.push(word);
-      }
+  if (/^[a-z]/i.test(input)) {
+    wordnet.validForms(input, function(results) {
+      if (results && results.length !== 0) {
+        for (i = 0; i < results.length; i++ ) {
+          _ref = results[i].split('#');
+          word = _ref[0];
+          wordforms.push(word);
+        }
 
-      next(null, reducer(_.uniq(wordforms)));
-    } else {
-      next(null, [input]);
-    }
-  });
+        next(null, reducer(_.uniq(wordforms)));
+      } else {
+        next(null, [input]);
+      }
+    });
+  } else {
+    next(null, [input]);
+  }
 };
 
 exports.lemmatize = function(input, cb) {

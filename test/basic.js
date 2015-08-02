@@ -21,4 +21,11 @@ describe('Lemma Interface', function(){
     });
   });
 
+  it("undef", function(done) {
+    Lem.lemmatize('__something__', function(err, res) {
+      console.log(err, res);
+      done();
+    });
+  });
+
 });
