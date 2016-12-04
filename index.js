@@ -1,8 +1,12 @@
 var async = require("async");
-var _ = require("underscore");
+var _ = require("lodash");
 
 var WordNet = require("node-wordnet");
 var wordnet = new WordNet({cache:true});
+
+var isLetter = function(c) {
+  return c.toLowerCase() != c.toUpperCase();
+}
 
 var _findForms = function(input, next) {
   var i, wordforms = [], word, _ref, reducer;
@@ -13,7 +17,7 @@ var _findForms = function(input, next) {
     });
   };
 
-  if (/^[a-z]/i.test(input)) {
+  if (isLetter(input.charAt(0))) {
     wordnet.validForms(input, function(results) {
       if (results && results.length !== 0) {
         for (i = 0; i < results.length; i++ ) {
@@ -21,7 +25,6 @@ var _findForms = function(input, next) {
           word = _ref[0];
           wordforms.push(word);
         }
-
         next(null, reducer(_.uniq(wordforms)));
       } else {
         next(null, [input]);
@@ -43,7 +46,7 @@ exports.lemmatize = function(input, cb) {
     lookup = [];
   }
   
-  async.mapSeries(lookup, _findForms, function(err, res) {
+  async.map(lookup, _findForms, function(err, res) {
     cb(null, _.flatten(res));
   });
 };
