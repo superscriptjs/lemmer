@@ -1,6 +1,6 @@
 {
   "name": "lemmer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Wordnet Lemmer",
   "main": "index.js",
   "scripts": {
@@ -9,11 +9,10 @@
   "author": "Rob Ellis",
   "license": "MIT",
   "dependencies": {
-    "WNdb": "3.1.1",
     "async": "^2.1.4",
     "lodash": "^4.17.2",
     "node-wordnet": "0.1.10",
-    "wndb-with-exceptions": "3.0.1"
+    "wndb-with-exceptions": "^3.0.1"
   },
   "repository": {
     "type": "git",
