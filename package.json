@@ -11,7 +11,7 @@
   "dependencies": {
     "async": "^2.1.4",
     "lodash": "^4.17.2",
-    "node-wordnet": "0.1.10",
+    "node-wordnet": "^0.1.12",
     "wndb-with-exceptions": "^3.0.1"
   },
   "repository": {
@@ -22,7 +22,7 @@
     "url": "https://github.com/silentrob/lemmer/issues"
   },
   "devDependencies": {
-    "mocha": "2.2.3",
-    "should": "5.2.0"
+    "mocha": "^3.2.0",
+    "should": "^11.1.1"
   }
 }
