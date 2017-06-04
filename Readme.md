@@ -1,6 +1,6 @@
 # Lemmer
 
-This is a simple English lemmer library for Node.js using WordNet. 
+This is a simple English lemmer library for Node.js using WordNet.
 This Library is sugar for on top of [validForms](https://github.com/morungos/wordnet#validformsword-callback).
 
 You can learn more about Lemmatizing words [on WikiPedia](http://en.wikipedia.org/wiki/Lemmatisation);
@@ -18,10 +18,21 @@ You can learn more about Lemmatizing words [on WikiPedia](http://en.wikipedia.or
       console.log(words); // ['go','and','buy']
     });
 
+## Usage using Promises
+
+    var Lemmer = require('lemmer');
+    Lemmer.lemmatize('fought').then(word){
+      console.log(word); // ['fight']
+    });
+
+    Lemmer.lemmatize(['went','and','bought]).then(words){
+      console.log(words); // ['go','and','buy']
+    });
+
 ## Related
 Fore more Node.js NLP check out;
 * [WordNet](https://github.com/morungos/wordnet/)
-* [Natural Node](https://github.com/NaturalNode/natural/) 
+* [Natural Node](https://github.com/NaturalNode/natural/)
 
 ## License
 

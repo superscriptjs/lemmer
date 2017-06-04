@@ -45,8 +45,13 @@ exports.lemmatize = function(input, cb) {
   } else {
     lookup = [];
   }
-  
-  async.map(lookup, _findForms, function(err, res) {
-    cb(null, _.flatten(res));
+  return new Promise(function (resolve) {
+    async.map(lookup, _findForms, function(err, res) {
+      res = _.flatten(res);
+      if (cb) {
+        cb(null, res);
+      }
+      resolve(res);
+    });
   });
 };

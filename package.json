@@ -14,6 +14,9 @@
     "node-wordnet": "^0.1.12",
     "wndb-with-exceptions": "^3.0.1"
   },
+  "engines": {
+    "node" : ">=0.12.18"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/silentrob/lemmer.git"
