@@ -9,10 +9,12 @@
   "author": "Rob Ellis",
   "license": "MIT",
   "dependencies": {
-    "async": "^2.1.4",
     "lodash": "^4.17.2",
     "node-wordnet": "^0.1.12",
     "wndb-with-exceptions": "^3.0.1"
+  },
+  "engines": {
+    "node" : ">=0.12.18"
   },
   "repository": {
     "type": "git",

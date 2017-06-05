@@ -1,4 +1,3 @@
-var async = require("async");
 var _ = require("lodash");
 
 var WordNet = require("node-wordnet");
@@ -6,9 +5,9 @@ var wordnet = new WordNet({cache:true});
 
 var isLetter = function(c) {
   return c.toLowerCase() != c.toUpperCase();
-}
+};
 
-var _findForms = function(input, next) {
+var _findForms = function(input) {
   var i, wordforms = [], word, _ref, reducer;
 
   reducer = function(list) {
@@ -18,20 +17,20 @@ var _findForms = function(input, next) {
   };
 
   if (isLetter(input.charAt(0))) {
-    wordnet.validForms(input, function(results) {
+    return wordnet.validFormsAsync(input).then(function(results) {
       if (results && results.length !== 0) {
         for (i = 0; i < results.length; i++ ) {
           _ref = results[i].split('#');
           word = _ref[0];
           wordforms.push(word);
         }
-        next(null, reducer(_.uniq(wordforms)));
+        return reducer(_.uniq(wordforms));
       } else {
-        next(null, [input]);
+        return [input];
       }
     });
   } else {
-    next(null, [input]);
+    return [input];
   }
 };
 
@@ -45,8 +44,12 @@ exports.lemmatize = function(input, cb) {
   } else {
     lookup = [];
   }
-  
-  async.map(lookup, _findForms, function(err, res) {
-    cb(null, _.flatten(res));
+
+  return Promise.all(lookup.map(_findForms)).then(function(res) {
+    res = _.flatten(res);
+    if (cb) {
+      cb(null, res);
+    }
+    return res;
   });
 };
