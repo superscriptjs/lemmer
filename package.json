@@ -1,6 +1,6 @@
 {
   "name": "lemmer",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Wordnet Lemmer",
   "main": "index.js",
   "scripts": {
@@ -18,10 +18,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/silentrob/lemmer.git"
+    "url": "git+https://github.com/superscriptjs/lemmer.git"
   },
   "bugs": {
-    "url": "https://github.com/silentrob/lemmer/issues"
+    "url": "https://github.com/superscriptjs/lemmer/issues"
   },
   "devDependencies": {
     "mocha": "^3.2.0",
